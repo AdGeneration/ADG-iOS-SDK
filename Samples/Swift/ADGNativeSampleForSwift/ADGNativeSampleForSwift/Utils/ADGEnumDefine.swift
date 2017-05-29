@@ -9,9 +9,9 @@
 import Foundation
 
 enum ADGAdType: Int {
-    case Sp
-    case Large
-    case Rect
-    case Tablet
-    case Free
+    case sp
+    case large
+    case rect
+    case tablet
+    case free
 }

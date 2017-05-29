@@ -1,5 +1,5 @@
 //
-//  NativeAdViewController.swift
+//  RectanglePageViewController.swift
 //  ADGNativeSampleForSwift
 //
 //  Created on 2016/06/10.
@@ -9,24 +9,24 @@
 import UIKit
 import FBAudienceNetwork
 
-class NativeAdViewController: UIViewController {
+class RectanglePageViewController: UIViewController {
     
     @IBOutlet weak var adView: UIView!
     @IBOutlet weak var logTextView: UITextView!
     
-    private var adg: ADGManagerViewController?
+    fileprivate var adg: ADGManagerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if (adg == nil) {
             let adgParam = [
                 "locationid": "32792",
-                "adtype": String(ADGAdType.Free.rawValue),
+                "adtype": String(ADGAdType.free.rawValue),
                 "originx": "0",
                 "originy": "0",
                 "w": "300",
@@ -58,7 +58,7 @@ class NativeAdViewController: UIViewController {
         }
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         adg?.pauseRefresh()
     }
@@ -67,21 +67,21 @@ class NativeAdViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func appendLog(log: String) {
-        self.logTextView.text.appendContentsOf(Log.format(log))
+    func appendLog(_ log: String) {
+        self.logTextView.text.append(Log.format(log))
     }
     
-    @IBAction func didTapRefreshButton(sender: AnyObject) {
+    @IBAction func didTapRefreshButton(_ sender: AnyObject) {
         adg?.loadRequest()
     }
 }
 
-extension NativeAdViewController: ADGManagerViewControllerDelegate {
+extension RectanglePageViewController: ADGManagerViewControllerDelegate {
     /**
      バナー広告の取得に成功した場合に呼び出されます
      */
-    func ADGManagerViewControllerReceiveAd(adgManagerViewController: ADGManagerViewController!) {
-        appendLog("バナー広告をロードしました")
+    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController!) {
+        appendLog("バナー広告をロードしました \(adgManagerViewController.locationid ?? "")")
     }
     
     /**
@@ -89,14 +89,15 @@ extension NativeAdViewController: ADGManagerViewControllerDelegate {
      - parameter adgManagerViewController: ADGManagerViewController
      - parameter mediationNativeAd: ネイティブ広告のインスタンス
      */
-    func ADGManagerViewControllerReceiveAd(adgManagerViewController: ADGManagerViewController!, mediationNativeAd: AnyObject!) {
-        appendLog("ネイティブ広告をロードしました")    
-
+    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController!, mediationNativeAd: Any!) {
+        appendLog("ネイティブ広告をロードしました \(adgManagerViewController.locationid ?? "")")
+        
         if let nativeAd = mediationNativeAd as? ADGNativeAd {
-            let rectAd = NativeAdView(adgManagerViewController: adgManagerViewController, nativeAd: nativeAd)
+            
+            let rectAd = ADGNativeAdRectangle(adgManagerViewController: adgManagerViewController, nativeAd: nativeAd)
             adView.addSubview(rectAd)
         } else if let nativeAd = mediationNativeAd as? FBNativeAd {
-            let rectAd = FBNativeAdView(adgManagerViewController: adgManagerViewController, nativeAd: nativeAd)
+            let rectAd = FBNativeAdRectangle(adgManagerViewController: adgManagerViewController, nativeAd: nativeAd, rootViewController: self)
             adView.addSubview(rectAd)
         }
     }
@@ -106,25 +107,25 @@ extension NativeAdViewController: ADGManagerViewControllerDelegate {
      - parameter adgManagerViewController: ADGManagerViewController
      - parameter code: エラーコード
      */
-    func ADGManagerViewControllerFailedToReceiveAd(adgManagerViewController: ADGManagerViewController!, code: kADGErrorCode) {
+    func adgManagerViewControllerFailed(toReceiveAd adgManagerViewController: ADGManagerViewController!, code: kADGErrorCode) {
         switch code {
-        case .ADGErrorCodeNeedConnection:
-            appendLog("エラーが発生しました ネットワーク接続不通")
-        case .ADGErrorCodeNoAd:
-            appendLog("エラーが発生しました レスポンス無し")
-        case .ADGErrorCodeReceivedFiller:
-            appendLog("エラーが発生しました 白板検知")
-        case .ADGErrorCodeCommunicationError:
-            appendLog("エラーが発生しました サーバ間通信エラー")
-        case .ADGErrorCodeExceedLimit:
-            appendLog("エラーが発生しました エラー多発")
+        case .adgErrorCodeNeedConnection:
+            appendLog("エラーが発生しました ネットワーク接続不通 \(adgManagerViewController.locationid ?? "")")
+        case .adgErrorCodeNoAd:
+            appendLog("エラーが発生しました レスポンス無し \(adgManagerViewController.locationid ?? "")")
+        case .adgErrorCodeReceivedFiller:
+            appendLog("エラーが発生しました 白板検知 \(adgManagerViewController.locationid ?? "")")
+        case .adgErrorCodeCommunicationError:
+            appendLog("エラーが発生しました サーバ間通信エラー \(adgManagerViewController.locationid ?? "")")
+        case .adgErrorCodeExceedLimit:
+            appendLog("エラーが発生しました エラー多発 \(adgManagerViewController.locationid ?? "")")
         default:
-            appendLog("エラーが発生しました 不明なエラー")
+            appendLog("エラーが発生しました 不明なエラー \(adgManagerViewController.locationid ?? "")")
         }
         
         // 不通とエラー過多のとき以外はリトライしてください
         switch code {
-        case .ADGErrorCodeNeedConnection, .ADGErrorCodeExceedLimit, .ADGErrorCodeNoAd:
+        case .adgErrorCodeNeedConnection, .adgErrorCodeExceedLimit, .adgErrorCodeNoAd:
             break
         default:
             adgManagerViewController.loadRequest()
