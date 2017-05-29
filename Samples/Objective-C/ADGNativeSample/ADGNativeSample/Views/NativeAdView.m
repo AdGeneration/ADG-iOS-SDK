@@ -31,7 +31,7 @@
     UILabel *adTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 20, 28, 14)];
     adTextLabel.textColor = [UIColor lightGrayColor];
     adTextLabel.font = [adTextLabel.font fontWithSize:11];
-    adTextLabel.text = @"広告";
+    adTextLabel.text = @"AD";
 
     // 本文
     UILabel *descriptionLbl = [[UILabel alloc] initWithFrame:CGRectMake(4, 30, 296, 40)];
@@ -72,19 +72,17 @@
 
     // CTA
     UIButton *actionBtn = [[UIButton alloc] initWithFrame:CGRectMake(178, 223, 114, 25)];
-    if (nativeAd.ctatext.value.length > 0) {
-        [actionBtn setTitle:nativeAd.ctatext.value forState:UIControlStateNormal];
-        [actionBtn setTitleColor:[UIColor colorWithRed:0.12 green:0.56 blue:1.00 alpha:1.0]
-                        forState:UIControlStateNormal];
-        [actionBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
-        actionBtn.backgroundColor = [UIColor whiteColor];
-        actionBtn.layer.borderWidth = 1.0f;
-        actionBtn.layer.borderColor = [[UIColor colorWithRed:0.12 green:0.56 blue:1.00 alpha:1.0] CGColor];
-        actionBtn.layer.cornerRadius = 5.0f;
-        actionBtn.titleEdgeInsets = UIEdgeInsetsMake(1.0f, 1.0f, 1.0f, 1.0f);
-        actionBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
-        [nativeAd setTapEvent:actionBtn];  // ボタンへのタップ反応追加
-    }
+    NSString *ctaText = nativeAd.ctatext.value.length > 0 ? nativeAd.ctatext.value : @"詳しくはこちら";
+    [actionBtn setTitle:ctaText forState:UIControlStateNormal];
+    [actionBtn setTitleColor:[UIColor colorWithRed:0.12 green:0.56 blue:1.00 alpha:1.0] forState:UIControlStateNormal];
+    [actionBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    actionBtn.backgroundColor = [UIColor whiteColor];
+    actionBtn.layer.borderWidth = 1.0f;
+    actionBtn.layer.borderColor = [[UIColor colorWithRed:0.12 green:0.56 blue:1.00 alpha:1.0] CGColor];
+    actionBtn.layer.cornerRadius = 5.0f;
+    actionBtn.titleEdgeInsets = UIEdgeInsetsMake(1.0f, 1.0f, 1.0f, 1.0f);
+    actionBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
+    [nativeAd setTapEvent:actionBtn];  // ボタンへのタップ反応追加
 
     UIView *nativeAdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 250)];
     [nativeAdView addSubview:iconImageView];
