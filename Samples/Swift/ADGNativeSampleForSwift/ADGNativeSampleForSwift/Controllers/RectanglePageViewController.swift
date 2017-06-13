@@ -13,6 +13,7 @@ class RectanglePageViewController: UIViewController {
     
     @IBOutlet weak var adView: UIView!
     @IBOutlet weak var logTextView: UITextView!
+    var rectAd: ADGNativeAdRectangle?
     
     fileprivate var adg: ADGManagerViewController?
     
@@ -49,11 +50,12 @@ class RectanglePageViewController: UIViewController {
                 // 実機でFANのテスト広告を表示する場合以下のメソッドを実行してください。
                 // FBAdSettings.addTestDevice("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
                 // == Facebook Audience Networkの場合の設定 ==
-                
                 adgManagerViewController.loadRequest()
                 adg = adgManagerViewController
+                
             }
         } else {
+            rectAd?.adgVideoView?.play()
             adg?.resumeRefresh()
         }
     }
@@ -61,6 +63,7 @@ class RectanglePageViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         adg?.pauseRefresh()
+        rectAd?.adgVideoView?.pause()
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,9 +96,10 @@ extension RectanglePageViewController: ADGManagerViewControllerDelegate {
         appendLog("ネイティブ広告をロードしました \(adgManagerViewController.locationid ?? "")")
         
         if let nativeAd = mediationNativeAd as? ADGNativeAd {
-            
             let rectAd = ADGNativeAdRectangle(adgManagerViewController: adgManagerViewController, nativeAd: nativeAd)
+            self.rectAd = rectAd
             adView.addSubview(rectAd)
+            
         } else if let nativeAd = mediationNativeAd as? FBNativeAd {
             let rectAd = FBNativeAdRectangle(adgManagerViewController: adgManagerViewController, nativeAd: nativeAd, rootViewController: self)
             adView.addSubview(rectAd)

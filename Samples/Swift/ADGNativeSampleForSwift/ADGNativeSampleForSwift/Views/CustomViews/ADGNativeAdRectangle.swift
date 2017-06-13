@@ -9,6 +9,7 @@
 import UIKit
 
 class ADGNativeAdRectangle: UIView {
+    private(set) var adgVideoView: ADGVideoView?
 
     required init(coder aDecoder: NSCoder) {
         fatalError("not implemented")
@@ -17,7 +18,6 @@ class ADGNativeAdRectangle: UIView {
     init (adgManagerViewController: ADGManagerViewController, nativeAd: ADGNativeAd) {
         // 広告を貼り付けるViewを生成
         super.init(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
-
         // アイコン
         if let urlStr = nativeAd.iconImage?.url,
             let url = URL(string: urlStr),
@@ -52,9 +52,14 @@ class ADGNativeAdRectangle: UIView {
             descLabel.textColor = UIColor.lightGray
             self.addSubview(descLabel)
         }
-
-        // 広告イメージ
-        if let urlStr = nativeAd.mainImage?.url,
+        
+        // 動画or広告イメージ
+        if let video = nativeAd.video, video.isValid == true {
+            let videoView = ADGVideoView(frame: CGRect(x: 0, y: 55, width: 300, height: 156))
+            videoView.video = video
+            self.addSubview(videoView)
+            adgVideoView = videoView
+        }else if let urlStr = nativeAd.mainImage?.url,
             let url = URL(string: urlStr),
             let data = try? Data(contentsOf: url) {
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 65, width: 300, height: 156))

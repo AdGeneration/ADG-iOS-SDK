@@ -11,6 +11,8 @@
 
 #import <ADG/ADGManagerViewController.h>
 #import <ADG/ADGNativeAd.h>
+#import <ADG/ADGVideo.h>
+#import <ADG/ADGVideoView.h>
 #import <FBAudienceNetwork/FBAdChoicesView.h>
 #import <FBAudienceNetwork/FBAdSettings.h>
 #import <FBAudienceNetwork/FBMediaView.h>
