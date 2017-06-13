@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sEn-Us-bIF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Banner Page View Controller-->
+        <scene sceneID="m4v-vH-BA2">
+            <objects>
+                <viewController id="sEn-Us-bIF" customClass="BannerPageViewController" customModule="ADGSampleForSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ERN-PD-fYk"/>
+                        <viewControllerLayoutGuide type="bottom" id="tp5-GH-hNq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rQp-mi-CIl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3np-7E-tLj">
+                                <rect key="frame" x="16" y="72" width="343" height="250"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cke-7Q-MNZ">
+                                        <rect key="frame" x="0.0" y="100" width="343" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="05C-CU-svZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cke-7Q-MNZ" secondAttribute="trailing" id="FNa-Db-DKM"/>
+                                    <constraint firstItem="Cke-7Q-MNZ" firstAttribute="leading" secondItem="3np-7E-tLj" secondAttribute="leading" id="RiW-B3-Uw7"/>
+                                    <constraint firstAttribute="height" constant="250" id="baM-PK-2ti"/>
+                                    <constraint firstItem="Cke-7Q-MNZ" firstAttribute="centerX" secondItem="3np-7E-tLj" secondAttribute="centerX" id="gSE-bN-8Qf"/>
+                                    <constraint firstItem="Cke-7Q-MNZ" firstAttribute="centerY" secondItem="3np-7E-tLj" secondAttribute="centerY" id="lqm-rp-muU"/>
+                                    <constraint firstAttribute="height" constant="250" id="yHd-vE-2pz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yHd-vE-2pz"/>
+                                        <exclude reference="gSE-bN-8Qf"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mx-Yc-jaF" customClass="LogTextView" customModule="ADGSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="16" y="330" width="343" height="329"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tp5-GH-hNq" firstAttribute="top" secondItem="6mx-Yc-jaF" secondAttribute="bottom" constant="8" id="8xf-Zg-xiu"/>
+                            <constraint firstItem="6mx-Yc-jaF" firstAttribute="top" secondItem="3np-7E-tLj" secondAttribute="bottom" constant="8" id="IVv-SJ-5n8"/>
+                            <constraint firstItem="6mx-Yc-jaF" firstAttribute="trailing" secondItem="rQp-mi-CIl" secondAttribute="trailingMargin" id="L7u-YN-azx"/>
+                            <constraint firstItem="3np-7E-tLj" firstAttribute="trailing" secondItem="rQp-mi-CIl" secondAttribute="trailingMargin" id="Qnt-hZ-VhI"/>
+                            <constraint firstItem="3np-7E-tLj" firstAttribute="leading" secondItem="rQp-mi-CIl" secondAttribute="leadingMargin" id="UUY-jm-gGk"/>
+                            <constraint firstItem="3np-7E-tLj" firstAttribute="top" secondItem="ERN-PD-fYk" secondAttribute="bottom" constant="8" id="o1i-zN-npe"/>
+                            <constraint firstItem="6mx-Yc-jaF" firstAttribute="leading" secondItem="rQp-mi-CIl" secondAttribute="leadingMargin" id="wRp-ys-gfU"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pp6-eS-cJE">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="n9r-nf-Gza"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="mOf-Cm-y8n">
+                            <connections>
+                                <action selector="didTapRefreshButton:" destination="sEn-Us-bIF" id="1mp-Kc-Tss"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="adView" destination="Cke-7Q-MNZ" id="JJ0-hk-A2t"/>
+                        <outlet property="logTextView" destination="6mx-Yc-jaF" id="7th-6b-cqP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93Z-n2-n5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="402" y="436"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gbg-fE-msb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interstitial Page View Controller-->
+        <scene sceneID="aD0-F5-7uU">
+            <objects>
+                <viewController id="gbg-fE-msb" customClass="InterstitialPageViewController" customModule="ADGSampleForSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BWD-Px-K4W"/>
+                        <viewControllerLayoutGuide type="bottom" id="qBA-I9-Hu6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JYf-IR-Dnh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hed-wG-Sbe">
+                                <rect key="frame" x="16" y="72" width="343" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pS-b7-MLW">
+                                        <rect key="frame" x="152.5" y="110" width="38" height="30"/>
+                                        <state key="normal" title="Show"/>
+                                        <connections>
+                                            <action selector="didTapShowButton:" destination="gbg-fE-msb" eventType="touchUpInside" id="Int-sB-WtL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Txk-OS-zG0"/>
+                                    <constraint firstItem="5pS-b7-MLW" firstAttribute="centerY" secondItem="Hed-wG-Sbe" secondAttribute="centerY" id="nfT-Tg-gSc"/>
+                                    <constraint firstItem="5pS-b7-MLW" firstAttribute="centerX" secondItem="Hed-wG-Sbe" secondAttribute="centerX" id="w0I-uD-8au"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27j-3K-Qte" customClass="LogTextView" customModule="ADGSampleForSwift" customModuleProvider="target">
+                                <rect key="frame" x="16" y="330" width="343" height="317"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hed-wG-Sbe" firstAttribute="leading" secondItem="JYf-IR-Dnh" secondAttribute="leadingMargin" id="4N5-Z0-CHM"/>
+                            <constraint firstItem="27j-3K-Qte" firstAttribute="trailing" secondItem="JYf-IR-Dnh" secondAttribute="trailingMargin" id="5aK-G1-bhj"/>
+                            <constraint firstItem="27j-3K-Qte" firstAttribute="leading" secondItem="JYf-IR-Dnh" secondAttribute="leadingMargin" id="Qpl-69-Xez"/>
+                            <constraint firstItem="Hed-wG-Sbe" firstAttribute="trailing" secondItem="JYf-IR-Dnh" secondAttribute="trailingMargin" id="TOq-oo-u6j"/>
+                            <constraint firstItem="qBA-I9-Hu6" firstAttribute="top" secondItem="27j-3K-Qte" secondAttribute="bottom" constant="20" id="mve-ge-gSy"/>
+                            <constraint firstItem="Hed-wG-Sbe" firstAttribute="top" secondItem="BWD-Px-K4W" secondAttribute="bottom" constant="8" id="qna-c3-ZI4"/>
+                            <constraint firstItem="27j-3K-Qte" firstAttribute="top" secondItem="Hed-wG-Sbe" secondAttribute="bottom" constant="8" id="tQK-dJ-AW9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zqe-rD-RCD">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="5I4-HU-ToB"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="logTextView" destination="27j-3K-Qte" id="lf2-UE-JkG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xy3-yu-J84" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="453" y="502"/>
+        </scene>
+    </scenes>
+</document>
