@@ -12,6 +12,7 @@
 
 @interface NativeAdViewController () {
     NSMutableArray *_outputs;
+    NativeAdView *nativeAdView;
     UIView *_adView;
 }
 @property (nonatomic, weak) IBOutlet UITextView *textView;
@@ -64,6 +65,7 @@
         [_adg setUsePartsResponse:YES];
         [_adg loadRequest];
     } else {
+        [nativeAdView.adgVideoView play];
         [_adg resumeRefresh];
     }
 }
@@ -71,6 +73,7 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     if (_adg) {
+        [nativeAdView.adgVideoView pause];
         [_adg pauseRefresh];
     }
 }
@@ -101,8 +104,7 @@
 
         // インフォメーションアイコンのデフォルト表示OFF
         adgManagerViewController.informationIconViewDefault = false;
-
-        UIView *nativeAdView = [[NativeAdView alloc] createAdView:nativeAd];
+        nativeAdView = [[NativeAdView alloc] initWithNativeAd:nativeAd];
         [_adg delegateViewManagement:nativeAdView nativeAd:nativeAd];
         [_adView addSubview:nativeAdView];
     }

@@ -7,9 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import <ADG/ADGNativeAd.h>
+#import <ADG/ADGVideoView.h>
 
 @interface NativeAdView : UIView
 
-- (UIView*) createAdView:(ADGNativeAd *) nativeAd;
+@property (nonatomic) ADGVideoView *adgVideoView;
+- (instancetype)initWithNativeAd:(ADGNativeAd *)nativeAd;
 
 @end
