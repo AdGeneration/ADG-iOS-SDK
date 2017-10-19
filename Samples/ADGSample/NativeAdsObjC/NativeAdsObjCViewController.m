@@ -47,7 +47,7 @@
     
     // インフォメーションアイコンのデフォルト表示
     // デフォルト表示しない場合は必ずADGInformationIconViewの設置を実装してください
-    self.adg.informationIconViewDefault = false;
+    self.adg.informationIconViewDefault = NO;
     
     /*
      Audience Networkを配信する場合は、
