@@ -94,7 +94,7 @@
     UIView *nativeAdView;
     if ([mediationNativeAd isKindOfClass: [ADGNativeAd class]]) {
         ADGNativeAdView *adgNativeAdView = [ADGNativeAdView view];
-        [adgNativeAdView apply:(ADGNativeAd *)mediationNativeAd];
+        [adgNativeAdView apply:(ADGNativeAd *)mediationNativeAd viewController:self];
         nativeAdView = adgNativeAdView;
     } else if ([mediationNativeAd isKindOfClass: [FBNativeAd class]]) {
         FBNativeAdCustomView *fbNativeAdView = [FBNativeAdCustomView view];

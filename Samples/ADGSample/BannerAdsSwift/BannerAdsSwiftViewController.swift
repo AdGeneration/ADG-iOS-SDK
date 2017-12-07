@@ -50,6 +50,11 @@ class BannerAdsSwiftViewController: UIViewController {
         // 画面復帰時のローテーション再開
         adg?.resumeRefresh()
     }
+    
+    deinit {
+        // インスタンスの破棄
+        adg = nil
+    }
 }
 
 extension BannerAdsSwiftViewController: ADGManagerViewControllerDelegate {

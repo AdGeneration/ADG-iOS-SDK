@@ -18,12 +18,7 @@ class ADGNativeAdView: UIView {
     }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var mainImageView: UIImageView! {
-        didSet {
-            mainImageView.contentMode = .scaleAspectFit
-            mainImageView.clipsToBounds = true
-        }
-    }
+    @IBOutlet weak var mediaViewContainerView: UIView!
     @IBOutlet weak var sponsoredLabel: UILabel!
     @IBOutlet weak var ctaLabel: UILabel! {
         didSet {
@@ -47,7 +42,7 @@ class ADGNativeAdView: UIView {
         layer.borderColor = UIColor.lightGray.cgColor
     }
 
-    func apply(nativeAd: ADGNativeAd) {
+    func apply(nativeAd: ADGNativeAd, viewController: UIViewController) {
         // タイトル
         titleLabel.text = nativeAd.title?.text ?? ""
         
@@ -61,17 +56,25 @@ class ADGNativeAdView: UIView {
             iconImageView.image = UIImage(data: data)
         }
         
-        // メイン画像
-        if let urlStr = nativeAd.mainImage?.url,
-            let url = URL(string: urlStr),
-            let data = try? Data(contentsOf: url) {
-            mainImageView.image = UIImage(data: data)
+        // メイン画像・動画
+        mediaViewContainerView.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+        
+        if nativeAd.canLoadMedia {
+            let frame = CGRect(x: 0, y: 0,
+                               width: mediaViewContainerView.bounds.size.width,
+                               height: mediaViewContainerView.bounds.size.height)
+            let mediaView = ADGMediaView(frame: frame)
+            mediaView.nativeAd = nativeAd
+            mediaView.viewController = viewController
+            mediaViewContainerView.addSubview(mediaView)
+            mediaView.load()
         }
         
         // インフォメーションアイコン
         let infoIconView = ADGInformationIconView(nativeAd: nativeAd)
-        mainImageView.subviews.forEach { $0.removeFromSuperview() }
-        mainImageView.addSubview(infoIconView)
+        mediaViewContainerView.addSubview(infoIconView)
         infoIconView.updateFrame(fromSuperview: .topRight)
         
         // 広告主

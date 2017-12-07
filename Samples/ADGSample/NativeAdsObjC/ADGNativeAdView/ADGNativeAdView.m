@@ -7,6 +7,7 @@
 
 #import "ADGNativeAdView.h"
 #import <ADG/ADGNativeAd.h>
+#import <ADG/ADGMediaView.h>
 #import <ADG/ADGInformationIconView.h>
 
 @interface ADGNativeAdView()
@@ -14,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
+@property (weak, nonatomic) IBOutlet UIView *mediaViewContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *sponsoredLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ctaLabel;
 
@@ -36,8 +37,6 @@
     
     self.iconImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.iconImageView.clipsToBounds = YES;
-    self.mainImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.mainImageView.clipsToBounds = YES;
     
     self.ctaLabel.backgroundColor = UIColor.whiteColor;
     self.ctaLabel.clipsToBounds = YES;
@@ -47,7 +46,7 @@
     self.ctaLabel.layer.cornerRadius = 5.0f;
 }
 
-- (void)apply:(ADGNativeAd *)nativeAd {
+- (void)apply:(ADGNativeAd *)nativeAd viewController:(UIViewController *)viewController {
     if (!nativeAd) {
         return;
     }
@@ -64,20 +63,26 @@
         self.iconImageView.image = [UIImage imageWithData:iconImageData];
     }
     
-    // メイン画像
-    if (nativeAd.mainImage.url.length > 0) {
-        NSURL *mainUrl = [NSURL URLWithString:nativeAd.mainImage.url];
-        NSData *mainImageData = [NSData dataWithContentsOfURL:mainUrl];
-        self.mainImageView.image = [UIImage imageWithData:mainImageData];
+    // メイン画像・動画
+    for (UIView *v in self.mediaViewContainerView.subviews) {
+        [v removeFromSuperview];
+    }
+    
+    if (nativeAd.canLoadMedia) {
+        CGRect mediaViewFrame = CGRectMake(0, 0,
+                                           self.mediaViewContainerView.bounds.size.width,
+                                           self.mediaViewContainerView.bounds.size.height);
+        ADGMediaView *mediaView = [[ADGMediaView alloc] initWithFrame:mediaViewFrame];
+        mediaView.nativeAd = nativeAd;
+        mediaView.viewController = viewController;
+        [self.mediaViewContainerView addSubview:mediaView];
+        [mediaView load];
     }
     
     // インフォメーションアイコン
     ADGInformationIconView *infoIconView = [[ADGInformationIconView alloc] initWithNativeAd:nativeAd];
     if (infoIconView) {
-        for (UIView *v in self.mainImageView.subviews) {
-            [v removeFromSuperview];
-        }
-        [self.mainImageView addSubview:infoIconView];
+        [self.mediaViewContainerView addSubview:infoIconView];
         [infoIconView updateFrameFromSuperview:UIRectCornerTopRight];
     }
     

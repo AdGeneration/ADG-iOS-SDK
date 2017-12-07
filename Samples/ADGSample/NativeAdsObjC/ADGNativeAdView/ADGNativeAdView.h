@@ -11,6 +11,6 @@
 @interface ADGNativeAdView : UIView
 
 + (instancetype)view;
-- (void)apply:(ADGNativeAd *)nativeAd;
+- (void)apply:(ADGNativeAd *)nativeAd viewController:(UIViewController *)viewController;
 
 @end

@@ -64,6 +64,11 @@ class NativeAdsSwiftViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    deinit {
+        // インスタンスの破棄
+        adg = nil
+    }
 
     @IBAction func didTapLoadRequestButton(_ sender: Any) {
         // 広告リクエスト
@@ -84,7 +89,7 @@ extension NativeAdsSwiftViewController: ADGManagerViewControllerDelegate {
         switch mediationNativeAd {
         case let nativeAd as ADGNativeAd:
             let adgNativeAdView = ADGNativeAdView.view()
-            adgNativeAdView.apply(nativeAd: nativeAd)
+            adgNativeAdView.apply(nativeAd: nativeAd, viewController: self)
             nativeAdView = adgNativeAdView
         case let nativeAd as FBNativeAd:
             let fbNativeAdView = FBNativeAdCustomView.view()

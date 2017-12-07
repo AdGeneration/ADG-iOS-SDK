@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,12 +74,13 @@
                         <constraint firstItem="ofb-CP-aRM" firstAttribute="top" secondItem="Nzj-oC-eil" secondAttribute="top" constant="4" id="wfa-bp-voQ"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-pj-wbl">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faH-42-811">
                     <rect key="frame" x="0.0" y="68" width="300" height="157"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="157" id="ZWy-VJ-H9A"/>
+                        <constraint firstAttribute="height" constant="157" id="TIV-Lc-kez"/>
                     </constraints>
-                </imageView>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BI-YD-Wwm">
                     <rect key="frame" x="0.0" y="225" width="300" height="25"/>
                     <subviews>
@@ -115,17 +116,17 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="2BI-YD-Wwm" firstAttribute="top" secondItem="Rlg-pj-wbl" secondAttribute="bottom" id="40N-gq-kmY"/>
+                <constraint firstItem="faH-42-811" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="4tj-K6-gp4"/>
                 <constraint firstItem="Nzj-oC-eil" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="9KY-Ad-tkq"/>
                 <constraint firstItem="Nzj-oC-eil" firstAttribute="top" secondItem="AQ7-WS-lGG" secondAttribute="bottom" id="Ege-Pf-5al"/>
-                <constraint firstItem="Rlg-pj-wbl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="GW4-Ul-d2h"/>
-                <constraint firstItem="Rlg-pj-wbl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IfP-ev-KOe"/>
                 <constraint firstItem="AQ7-WS-lGG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fEn-0u-qfQ"/>
                 <constraint firstItem="Nzj-oC-eil" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hee-jh-yTR"/>
                 <constraint firstItem="AQ7-WS-lGG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="oGM-Fp-g9W"/>
                 <constraint firstItem="2BI-YD-Wwm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pC2-xL-yKQ"/>
+                <constraint firstItem="2BI-YD-Wwm" firstAttribute="top" secondItem="faH-42-811" secondAttribute="bottom" id="s4r-Rh-Wmg"/>
                 <constraint firstItem="2BI-YD-Wwm" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="wy2-GY-2OG"/>
-                <constraint firstItem="Rlg-pj-wbl" firstAttribute="top" secondItem="Nzj-oC-eil" secondAttribute="bottom" id="yNM-D5-MEf"/>
+                <constraint firstItem="faH-42-811" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xxh-cD-b74"/>
+                <constraint firstItem="faH-42-811" firstAttribute="top" secondItem="Nzj-oC-eil" secondAttribute="bottom" id="yNY-r0-xC2"/>
                 <constraint firstItem="AQ7-WS-lGG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zSL-gc-7gF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -134,7 +135,7 @@
                 <outlet property="ctaLabel" destination="Tv9-KB-GXT" id="q6B-ID-9Bb"/>
                 <outlet property="descriptionLabel" destination="ofb-CP-aRM" id="v34-QU-3qd"/>
                 <outlet property="iconImageView" destination="N8y-4p-pbS" id="492-fm-sri"/>
-                <outlet property="mainImageView" destination="Rlg-pj-wbl" id="qml-jF-Hhl"/>
+                <outlet property="mediaViewContainerView" destination="faH-42-811" id="3M7-tF-Gmr"/>
                 <outlet property="sponsoredLabel" destination="9uZ-hY-vaE" id="NsZ-V7-yaw"/>
                 <outlet property="titleLabel" destination="Ios-kC-Xbe" id="YbP-ev-ohm"/>
             </connections>
