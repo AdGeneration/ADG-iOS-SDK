@@ -10,7 +10,7 @@
 
 @interface FBNativeAdCustomView()
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet FBAdIconView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIView *mediaViewContainer;
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
@@ -47,28 +47,13 @@
         return;
     }
     
-    // アイコン
-    if (nativeAd.icon) {
-        NSData *data = [NSData dataWithContentsOfURL:nativeAd.icon.url];
-        self.iconImageView.image = [UIImage imageWithData:data];
-    }
-    
     // タイトル
-    self.titleLabel.text = nativeAd.title;
+    self.titleLabel.text = nativeAd.headline;
     
     // FBMediaView
     FBMediaView *mediaView = [[FBMediaView alloc] initWithFrame:CGRectMake(0, 0, self.mediaViewContainer.frame.size.width, self.mediaViewContainer.frame.size.height)];
-    mediaView.nativeAd = nativeAd;
     [self.mediaViewContainer addSubview:mediaView];
-    
-    // FBMediaViewを使用せず静止画のみ使用する場合
-//    UIImageView *coverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.mediaViewContainer.frame.size.width, self.mediaViewContainer.frame.size.height)];
-//    coverImageView.clipsToBounds = YES;
-//    NSData *coverImageData = [NSData dataWithContentsOfURL:nativeAd.coverImage.url];
-//    UIImage *coverImage = [UIImage imageWithData:coverImageData];
-//    coverImageView.image = coverImage;
-//    [self.mediaViewContainer addSubview:coverImageView];
-    
+
     // AdChoices（AudienceNetworkの広告オプトアウトへの導線です）
     FBAdChoicesView *adChoices = [[FBAdChoicesView alloc] initWithNativeAd:nativeAd expandable:YES];
     adChoices.backgroundShown = NO;
@@ -76,7 +61,7 @@
     [adChoices updateFrameFromSuperview:UIRectCornerTopRight];
     
     // 本文
-    self.bodyLabel.text = nativeAd.body;
+    self.bodyLabel.text = nativeAd.bodyText;
     
     // socialContext
     self.socialLabel.text = nativeAd.socialContext;
@@ -84,11 +69,15 @@
     // CTA
     self.ctaLabel.text = nativeAd.callToAction;
     
+    
+    
     // クリック領域
     NSArray *clickableViews = @[self.titleLabel, self.mediaViewContainer, self.socialLabel, self.ctaLabel];
     [nativeAd registerViewForInteraction:self
-                      withViewController:viewController
-                      withClickableViews:clickableViews];
+                               mediaView:mediaView
+                                iconView:self.iconImageView
+                          viewController:viewController
+                          clickableViews:clickableViews];
 }
 
 @end

@@ -4,12 +4,11 @@
 //
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
-
 import UIKit
 import ADG
 
 class ADGNativeAdView: UIView {
-
+    
     @IBOutlet weak var iconImageView: UIImageView! {
         didSet {
             iconImageView.contentMode = .scaleAspectFit
@@ -41,7 +40,7 @@ class ADGNativeAdView: UIView {
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.lightGray.cgColor
     }
-
+    
     func apply(nativeAd: ADGNativeAd, viewController: UIViewController) {
         // タイトル
         titleLabel.text = nativeAd.title?.text ?? ""

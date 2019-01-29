@@ -53,6 +53,10 @@
 		B0EE73751F74F87B00D9A52E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EE73731F74F87B00D9A52E /* Main.storyboard */; };
 		B0EE73771F74F87B00D9A52E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0EE73761F74F87B00D9A52E /* Assets.xcassets */; };
 		B0EE737A1F74F87B00D9A52E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EE73781F74F87B00D9A52E /* LaunchScreen.storyboard */; };
+		C57EDB7121142133003B9B90 /* FBNativeBannerAdCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57EDB7021142133003B9B90 /* FBNativeBannerAdCustomView.swift */; };
+		C57EDB7321142157003B9B90 /* FBNativeBannerAdCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57EDB7221142157003B9B90 /* FBNativeBannerAdCustomView.xib */; };
+		C57EDB772114433B003B9B90 /* FBNativeBannerAdCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C57EDB762114433B003B9B90 /* FBNativeBannerAdCustomView.m */; };
+		C57EDB7B211444B2003B9B90 /* FBNativeBannerAdCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57EDB7A211444B2003B9B90 /* FBNativeBannerAdCustomView.xib */; };
 		DC6D580A034949ADA8A484EB /* Pods_BannerAdsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9329FD9372BA0F16C1A285 /* Pods_BannerAdsSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +136,11 @@
 		B0EE73761F74F87B00D9A52E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0EE73791F74F87B00D9A52E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0EE737B1F74F87B00D9A52E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C57EDB7021142133003B9B90 /* FBNativeBannerAdCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNativeBannerAdCustomView.swift; sourceTree = "<group>"; };
+		C57EDB7221142157003B9B90 /* FBNativeBannerAdCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBNativeBannerAdCustomView.xib; sourceTree = "<group>"; };
+		C57EDB752114433B003B9B90 /* FBNativeBannerAdCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBNativeBannerAdCustomView.h; sourceTree = "<group>"; };
+		C57EDB762114433B003B9B90 /* FBNativeBannerAdCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBNativeBannerAdCustomView.m; sourceTree = "<group>"; };
+		C57EDB7A211444B2003B9B90 /* FBNativeBannerAdCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBNativeBannerAdCustomView.xib; sourceTree = "<group>"; };
 		CA10F631DC7C183F86700222 /* Pods-NativeAdsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAdsSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeAdsSwift/Pods-NativeAdsSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		D2520EFDD352131682380FD2 /* Pods-InterstitialAdsObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterstitialAdsObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterstitialAdsObjC/Pods-InterstitialAdsObjC.release.xcconfig"; sourceTree = "<group>"; };
 		D673650960CBE6AF4109A2D5 /* Pods_ADGSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADGSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +310,7 @@
 			children = (
 				B01556C61F752D970078E406 /* ADGNativeAdView */,
 				B03C6DC81F78A32400F8F307 /* FBNativeAdCustomView */,
+				C57EDB7421144310003B9B90 /* FBNativeBannerAdCustomView */,
 				B02FCCCB1F73CBF200D7C310 /* AppDelegate.h */,
 				B02FCCCC1F73CBF200D7C310 /* AppDelegate.m */,
 				B02FCCCE1F73CBF200D7C310 /* NativeAdsObjCViewController.h */,
@@ -319,6 +329,7 @@
 			children = (
 				B01556D61F757AEC0078E406 /* ADGNativeAdView */,
 				B03C6DCE1F78CBC300F8F307 /* FBNativeAdCustomView */,
+				C57EDB6F211420AC003B9B90 /* FBNativeBannerAdCustomView */,
 				B02FCCE51F73CC0600D7C310 /* AppDelegate.swift */,
 				B02FCCE71F73CC0600D7C310 /* NativeAdsSwiftViewController.swift */,
 				B02FCCE91F73CC0600D7C310 /* Main.storyboard */,
@@ -370,6 +381,25 @@
 				B0EE736B1F74F87B00D9A52E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C57EDB6F211420AC003B9B90 /* FBNativeBannerAdCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C57EDB7221142157003B9B90 /* FBNativeBannerAdCustomView.xib */,
+				C57EDB7021142133003B9B90 /* FBNativeBannerAdCustomView.swift */,
+			);
+			path = FBNativeBannerAdCustomView;
+			sourceTree = "<group>";
+		};
+		C57EDB7421144310003B9B90 /* FBNativeBannerAdCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C57EDB7A211444B2003B9B90 /* FBNativeBannerAdCustomView.xib */,
+				C57EDB752114433B003B9B90 /* FBNativeBannerAdCustomView.h */,
+				C57EDB762114433B003B9B90 /* FBNativeBannerAdCustomView.m */,
+			);
+			path = FBNativeBannerAdCustomView;
 			sourceTree = "<group>";
 		};
 		D4F3057F70A2B8F55D3DC898 /* Pods */ = {
@@ -613,6 +643,7 @@
 				B02FCCD81F73CBF200D7C310 /* LaunchScreen.storyboard in Resources */,
 				B02FCCD51F73CBF200D7C310 /* Assets.xcassets in Resources */,
 				B03C6DCD1F78A35100F8F307 /* FBNativeAdCustomView.xib in Resources */,
+				C57EDB7B211444B2003B9B90 /* FBNativeBannerAdCustomView.xib in Resources */,
 				B02FCCD31F73CBF200D7C310 /* Main.storyboard in Resources */,
 				B01556D11F752ECF0078E406 /* ADGNativeAdView.xib in Resources */,
 			);
@@ -625,6 +656,7 @@
 				B02FCCF01F73CC0600D7C310 /* LaunchScreen.storyboard in Resources */,
 				B02FCCED1F73CC0600D7C310 /* Assets.xcassets in Resources */,
 				B02FCCEB1F73CC0600D7C310 /* Main.storyboard in Resources */,
+				C57EDB7321142157003B9B90 /* FBNativeBannerAdCustomView.xib in Resources */,
 				B01556DA1F757B380078E406 /* ADGNativeAdView.xib in Resources */,
 				B03C6DD21F78CBFD00F8F307 /* FBNativeAdCustomView.xib in Resources */,
 			);
@@ -953,6 +985,7 @@
 				B02FCCCD1F73CBF200D7C310 /* AppDelegate.m in Sources */,
 				B03C6DCB1F78A34600F8F307 /* FBNativeAdCustomView.m in Sources */,
 				B01556CF1F752EC20078E406 /* ADGNativeAdView.m in Sources */,
+				C57EDB772114433B003B9B90 /* FBNativeBannerAdCustomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +995,7 @@
 			files = (
 				B01556D81F757B0D0078E406 /* ADGNativeAdView.swift in Sources */,
 				B02FCCE81F73CC0600D7C310 /* NativeAdsSwiftViewController.swift in Sources */,
+				C57EDB7121142133003B9B90 /* FBNativeBannerAdCustomView.swift in Sources */,
 				B02FCCE61F73CC0600D7C310 /* AppDelegate.swift in Sources */,
 				B03C6DD01F78CBDF00F8F307 /* FBNativeAdCustomView.swift in Sources */,
 			);

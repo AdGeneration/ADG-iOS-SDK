@@ -11,6 +11,7 @@
 #import <ADG/ADGManagerViewController.h>
 #import <ADG/ADGNativeAd.h>
 #import <FBAudienceNetwork/FBNativeAd.h>
+#import "FBNativeBannerAdCustomView.h"
 
 @interface NativeAdsObjCViewController () <ADGManagerViewControllerDelegate>
 
@@ -25,21 +26,18 @@
     [super viewDidLoad];
 
     /*
-     locationid:  管理画面から払い出された広告枠ID
-     adtype:      枠サイズ kADG_AdType_Free:自由設定
-     w:           広告枠横幅
-     h:           広告枠高さ
+     locationID:  管理画面から払い出された広告枠ID
+     adType:      枠サイズ kADG_AdType_Free:自由設定
+     rootViewController: 広告を配置するViewController
      */
-    NSDictionary *adgparam = @{
-       @"locationid" : @"48635",
-       @"adtype" : @(kADG_AdType_Free),
-       @"w" : @300,
-       @"h" : @250
-    };
+    self.adg = [[ADGManagerViewController alloc] initWithLocationID:@"48635"
+                                                             adType:kADG_AdType_Free
+                                                 rootViewController:self];
     
-    // HTMLテンプレートを使用したネイティブ広告を表示のためにはadViewを指定する必要があります
-    self.adg = [[ADGManagerViewController alloc] initWithAdParams:adgparam
-                                                           adView:self.adView];
+    // HTMLテンプレートを使用したネイティブ広告を表示するためには以下のように配置するViewを指定します
+    self.adg.adSize = CGSizeMake(300, 250);
+    [self.adg addAdContainerView:self.adView];
+    
     self.adg.delegate = self;
     
     // ネイティブ広告パーツ取得を有効
@@ -48,13 +46,6 @@
     // インフォメーションアイコンのデフォルト表示
     // デフォルト表示しない場合は必ずADGInformationIconViewの設置を実装してください
     self.adg.informationIconViewDefault = NO;
-    
-    /*
-     Audience Networkを配信する場合は、
-     最前面にあるUIViewControllerに対して以下のように設定をおこなってください。
-     */
-    [self addChildViewController:self.adg];
-    self.adg.rootViewController = self;
     
     /*
      実機でAudience Networkのテスト広告を表示する場合、
@@ -99,6 +90,11 @@
     } else if ([mediationNativeAd isKindOfClass: [FBNativeAd class]]) {
         FBNativeAdCustomView *fbNativeAdView = [FBNativeAdCustomView view];
         [fbNativeAdView apply:(FBNativeAd *)mediationNativeAd
+               viewController:self];
+        nativeAdView = fbNativeAdView;
+    } else if ([mediationNativeAd isKindOfClass: [FBNativeBannerAd class]]){
+        FBNativeBannerAdCustomView *fbNativeAdView = [FBNativeBannerAdCustomView view];
+        [fbNativeAdView apply:(FBNativeBannerAd *)mediationNativeAd
                viewController:self];
         nativeAdView = fbNativeAdView;
     }

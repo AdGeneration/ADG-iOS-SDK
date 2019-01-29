@@ -45,11 +45,11 @@ class InterstitialAdsSwiftViewController: UIViewController {
 
 extension InterstitialAdsSwiftViewController: ADGInterstitialDelegate {
 
-    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController!) {
+    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController) {
         print("Received an ad.")
     }
 
-    func adgManagerViewControllerFailed(toReceiveAd adgManagerViewController: ADGManagerViewController!, code: kADGErrorCode) {
+    func adgManagerViewControllerFailed(toReceiveAd adgManagerViewController: ADGManagerViewController, code: kADGErrorCode) {
         print("Failed to receive an ad.")
         // エラー時のリトライは特段の理由がない限り必ず記述するようにしてください。
         switch code {
@@ -62,7 +62,7 @@ extension InterstitialAdsSwiftViewController: ADGInterstitialDelegate {
         }
     }
 
-    func adgManagerViewControllerDidTapAd(_ adgManagerViewController: ADGManagerViewController!) {
+    func adgManagerViewControllerDidTapAd(_ adgManagerViewController: ADGManagerViewController) {
         print("Did tap an ad.")
     }
 

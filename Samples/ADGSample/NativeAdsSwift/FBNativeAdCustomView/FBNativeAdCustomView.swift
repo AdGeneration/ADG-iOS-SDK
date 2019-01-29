@@ -10,7 +10,7 @@ import FBAudienceNetwork
 
 class FBNativeAdCustomView: UIView {
 
-    @IBOutlet weak var iconImageView: UIImageView! {
+    @IBOutlet weak var iconImageView: FBAdIconView! {
         didSet {
             iconImageView.contentMode = .scaleAspectFit
             iconImageView.clipsToBounds = true
@@ -43,29 +43,13 @@ class FBNativeAdCustomView: UIView {
     }
     
     func apply(nativeAd: FBNativeAd, viewController: UIViewController) {
-        // アイコン画像
-        if let url = nativeAd.icon?.url,
-            let data = try? Data(contentsOf: url) {
-            iconImageView.image = UIImage(data: data)
-        }
         
         // タイトル
-        titleLabel.text = nativeAd.title
+        titleLabel.text = nativeAd.headline
         
         // FBMediaView
         let mediaView = FBMediaView(frame: CGRect(x: 0, y: 0, width: mediaViewContainer.frame.width, height: mediaViewContainer.frame.height))
-        mediaView.nativeAd = nativeAd
         mediaViewContainer.addSubview(mediaView)
-        
-        // FBMediaViewを使用せず静止画のみ使用する場合
-//        let coverImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: mediaViewContainer.frame.width, height: mediaViewContainer.frame.height))
-//        coverImageView.clipsToBounds = true
-//        if let url = nativeAd.coverImage?.url,
-//            let data = try? Data(contentsOf: url) {
-//            let image = UIImage(data: data)
-//            coverImageView.image = image
-//            mediaViewContainer.addSubview(coverImageView)
-//        }
         
         // AdChoices（AudienceNetworkの広告オプトアウトへの導線です）
         let adChoices = FBAdChoicesView(nativeAd: nativeAd, expandable: true)
@@ -74,7 +58,7 @@ class FBNativeAdCustomView: UIView {
         adChoices.updateFrame(fromSuperview: .topRight)
         
         // 本文
-        bodyLabel.text = nativeAd.body
+        bodyLabel.text = nativeAd.bodyText
         
         // socialContext
         socialLabel.text = nativeAd.socialContext
@@ -84,6 +68,6 @@ class FBNativeAdCustomView: UIView {
         
         // クリック領域
         let clickableViews:[UIView] = [titleLabel, mediaViewContainer, socialLabel, ctaLabel]
-        nativeAd.registerView(forInteraction: self, with: viewController, withClickableViews: clickableViews)
+        nativeAd.registerView(forInteraction: self, mediaView:mediaView, iconView:self.iconImageView, viewController: viewController, clickableViews: clickableViews)
     }
 }

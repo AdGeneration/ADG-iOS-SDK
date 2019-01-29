@@ -21,26 +21,17 @@
     [super viewDidLoad];
 
     /*
-     locationid:  管理画面から払い出された広告枠ID
-     adtype:      枠サイズ
+     locationID:  管理画面から払い出された広告枠ID
+     adType:      枠サイズ
                   kADG_AdType_Sp：320x50, kADG_AdType_Large:320x100,
                   kADG_AdType_Rect:300x250, kADG_AdType_Tablet:728x90,
                   kADG_AdType_Free:自由設定
-     originx:     広告枠設置起点のx座標(optional)
-     originy:     広告枠設置起点のy座標(optional)
-     w:           広告枠横幅(kADG_AdType_Freeのとき有効 optional)
-     h:           広告枠高さ(kADG_AdType_Freeのとき有効 optional)
+     rootViewController: 広告を配置するViewController
      */
-    NSDictionary *adgparam = @{
-        @"locationid" : @"48547",
-        @"adtype" : @(kADG_AdType_Sp),
-//        @"originx" : @0,
-//        @"originy" : @0,
-//        @"w" : @0,
-//        @"h" : @0
-    };
-    self.adg = [[ADGManagerViewController alloc] initWithAdParams:adgparam
-                                                           adView:self.adView];
+    self.adg = [[ADGManagerViewController alloc] initWithLocationID:@"48547"
+                                                             adType:kADG_AdType_Sp
+                                                 rootViewController:self];
+    [self.adg addAdContainerView:self.adView]; // 広告Viewを配置するViewを指定
     self.adg.delegate = self;
     [self.adg loadRequest]; // 広告リクエスト
 }

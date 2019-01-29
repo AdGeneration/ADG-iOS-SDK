@@ -18,38 +18,26 @@ class NativeAdsSwiftViewController: UIViewController {
         super.viewDidLoad()
 
         /*
-         locationid:  管理画面から払い出された広告枠ID
-         adtype:      枠サイズ kADG_AdType_Free:自由設定
-         w:           広告枠横幅
-         h:           広告枠高さ
+         locationID:  管理画面から払い出された広告枠ID
+         adType:      枠サイズ kADG_AdType_Free:自由設定
+         rootViewController: 広告を配置するViewController
          */
-        let params: [String: Any] = [
-            "locationid": "48635",
-            "adtype": ADGAdType.adType_Sp.rawValue,
-            "w": 300,
-            "h": 250,
-        ]
+        adg = ADGManagerViewController(locationID: "48635",
+                                       adType: .adType_Free,
+                                       rootViewController: self)
         
-        // HTMLテンプレートを使用したネイティブ広告を表示のためにはadViewを指定する必要があります
-        if let adg = ADGManagerViewController(adParams: params, adView: self.adView) {
-            adg.delegate = self
+        // HTMLテンプレートを使用したネイティブ広告を表示するためには以下のように配置するViewを指定します
+        adg?.adSize = CGSize(width: 300, height: 250)
+        adg?.addAdContainerView(self.adView)
         
-            // ネイティブ広告パーツ取得を有効
-            adg.usePartsResponse = true
-            
-            // インフォメーションアイコンのデフォルト表示
-            // デフォルト表示しない場合は必ずADGInformationIconViewの設置を実装してください
-            adg.informationIconViewDefault = false
-            
-            /*
-             Audience Networkを配信する場合は、
-             最前面にあるUIViewControllerに対して以下のように設定をおこなってください。
-             */
-            addChildViewController(adg)
-            adg.rootViewController = self;
+        adg?.delegate = self
         
-            self.adg = adg
-        }
+        // ネイティブ広告パーツ取得を有効
+        adg?.usePartsResponse = true
+        
+        // インフォメーションアイコンのデフォルト表示
+        // デフォルト表示しない場合は必ずADGInformationIconViewの設置を実装してください
+        adg?.informationIconViewDefault = false
         
         /*
          実機でAudience Networkのテスト広告を表示する場合、
@@ -78,11 +66,11 @@ class NativeAdsSwiftViewController: UIViewController {
 
 extension NativeAdsSwiftViewController: ADGManagerViewControllerDelegate {
     
-    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController!) {
+    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController) {
         print("Received an ad.")
     }
     
-    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController!, mediationNativeAd: Any!) {
+    func adgManagerViewControllerReceiveAd(_ adgManagerViewController: ADGManagerViewController, mediationNativeAd: Any) {
         print("Received an ad.")
         
         var nativeAdView: UIView?
@@ -95,6 +83,10 @@ extension NativeAdsSwiftViewController: ADGManagerViewControllerDelegate {
             let fbNativeAdView = FBNativeAdCustomView.view()
             fbNativeAdView.apply(nativeAd: nativeAd, viewController: self)
             nativeAdView = fbNativeAdView
+        case let nativeAd as FBNativeBannerAd:
+            let fbNativeBannerAdView = FBNativeBannerAdCustomView.view()
+            fbNativeBannerAdView.apply(nativeAd: nativeAd, viewController: self)
+            nativeAdView = fbNativeBannerAdView
         default:
             return
         }
@@ -107,7 +99,7 @@ extension NativeAdsSwiftViewController: ADGManagerViewControllerDelegate {
         }
     }
     
-    func adgManagerViewControllerFailed(toReceiveAd adgManagerViewController: ADGManagerViewController!, code: kADGErrorCode) {
+    func adgManagerViewControllerFailed(toReceiveAd adgManagerViewController: ADGManagerViewController, code: kADGErrorCode) {
         print("Failed to receive an ad.")
         // エラー時のリトライは特段の理由がない限り必ず記述するようにしてください。
         switch code {
