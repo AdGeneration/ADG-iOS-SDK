@@ -18,6 +18,7 @@ class InterstitialAdsSwiftViewController: UIViewController {
         interstitial = ADGInterstitial()
         interstitial?.setLocationId("48549")    // 管理画面から払い出された広告枠ID
         interstitial?.delegate = self
+        interstitial?.rootViewController = self
     }
 
     override func didReceiveMemoryWarning() {
