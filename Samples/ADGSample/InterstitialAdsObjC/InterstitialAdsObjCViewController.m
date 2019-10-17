@@ -22,6 +22,7 @@
     self.interstitial = [[ADGInterstitial alloc] init];
     [self.interstitial setLocationId:@"48549"]; // 管理画面から払い出された広告枠ID
     self.interstitial.delegate = self;
+    self.interstitial.rootViewController = self;
 }
 
 - (void)didReceiveMemoryWarning {
