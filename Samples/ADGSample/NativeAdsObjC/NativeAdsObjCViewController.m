@@ -7,11 +7,8 @@
 
 #import "NativeAdsObjCViewController.h"
 #import "ADGNativeAdView.h"
-#import "FBNativeAdCustomView.h"
 #import <ADG/ADGManagerViewController.h>
 #import <ADG/ADGNativeAd.h>
-#import <FBAudienceNetwork/FBNativeAd.h>
-#import "FBNativeBannerAdCustomView.h"
 
 @interface NativeAdsObjCViewController () <ADGManagerViewControllerDelegate>
 
@@ -46,14 +43,6 @@
     // インフォメーションアイコンのデフォルト表示
     // デフォルト表示しない場合は必ずADGInformationIconViewの設置を実装してください
     self.adg.informationIconViewDefault = NO;
-    
-    /*
-     実機でAudience Networkのテスト広告を表示する場合、
-     1. 以下のsetLogLevelメソッドを実行してください
-        [FBAdSettings setLogLevel:FBAdLogLevelNotification];
-     2. ログに出力されるデバイスハッシュを取得し、addTestDeviceを実行してください
-        [FBAdSettings addTestDevice:@"{device_hash}"];
-     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,16 +76,6 @@
         ADGNativeAdView *adgNativeAdView = [ADGNativeAdView view];
         [adgNativeAdView apply:(ADGNativeAd *)mediationNativeAd viewController:self];
         nativeAdView = adgNativeAdView;
-    } else if ([mediationNativeAd isKindOfClass: [FBNativeAd class]]) {
-        FBNativeAdCustomView *fbNativeAdView = [FBNativeAdCustomView view];
-        [fbNativeAdView apply:(FBNativeAd *)mediationNativeAd
-               viewController:self];
-        nativeAdView = fbNativeAdView;
-    } else if ([mediationNativeAd isKindOfClass: [FBNativeBannerAd class]]){
-        FBNativeBannerAdCustomView *fbNativeAdView = [FBNativeBannerAdCustomView view];
-        [fbNativeAdView apply:(FBNativeBannerAd *)mediationNativeAd
-               viewController:self];
-        nativeAdView = fbNativeAdView;
     }
     
     if (nativeAdView) {

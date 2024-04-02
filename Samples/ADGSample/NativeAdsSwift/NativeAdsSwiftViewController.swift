@@ -7,7 +7,6 @@
 
 import UIKit
 import ADG
-import FBAudienceNetwork
 
 class NativeAdsSwiftViewController: UIViewController {
 
@@ -38,14 +37,6 @@ class NativeAdsSwiftViewController: UIViewController {
         // インフォメーションアイコンのデフォルト表示
         // デフォルト表示しない場合は必ずADGInformationIconViewの設置を実装してください
         adg?.informationIconViewDefault = false
-        
-        /*
-         実機でAudience Networkのテスト広告を表示する場合、
-         1. 以下のsetLogLevelメソッドを実行してください
-             FBAdSettings.setLogLevel(.notification)
-         2. ログに出力されるデバイスハッシュを取得し、addTestDeviceを実行してください
-             FBAdSettings.addTestDevice("{device_hash}")
-         */
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,14 +70,6 @@ extension NativeAdsSwiftViewController: ADGManagerViewControllerDelegate {
             let adgNativeAdView = ADGNativeAdView.view()
             adgNativeAdView.apply(nativeAd: nativeAd, viewController: self)
             nativeAdView = adgNativeAdView
-        case let nativeAd as FBNativeAd:
-            let fbNativeAdView = FBNativeAdCustomView.view()
-            fbNativeAdView.apply(nativeAd: nativeAd, viewController: self)
-            nativeAdView = fbNativeAdView
-        case let nativeAd as FBNativeBannerAd:
-            let fbNativeBannerAdView = FBNativeBannerAdCustomView.view()
-            fbNativeBannerAdView.apply(nativeAd: nativeAd, viewController: self)
-            nativeAdView = fbNativeBannerAdView
         default:
             return
         }
