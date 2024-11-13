@@ -19,22 +19,6 @@ target 'BannerAdsSwift' do
 
 end
 
-target 'InterstitialAdsObjC' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for InterstitialAdsObjC
-
-end
-
-target 'InterstitialAdsSwift' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for InterstitialAdsSwift
-
-end
-
 target 'NativeAdsObjC' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!

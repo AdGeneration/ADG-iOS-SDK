@@ -5,13 +5,14 @@
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
-#import "BannerAdsObjCViewController.h"
-#import <ADG/ADGManagerViewController.h>
-#import <ADG/ADGSettings.h>
-#import <CoreTelephony/CTCarrier.h>
-#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <AdSupport/AdSupport.h>
 #import <AppTrackingTransparency/ATTrackingManager.h>
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
+#import <ADG/ADG.h>
+
+#import "BannerAdsObjCViewController.h"
 
 @interface BannerAdsObjCViewController () <ADGManagerViewControllerDelegate>
 
@@ -27,63 +28,61 @@
 
 @implementation BannerAdsObjCViewController
 
-- (void)loadAd {
+- (void) loadAd {
     /*
-     locationID:  管理画面から払い出された広告枠ID
-     adType:      枠サイズ
-                  kADG_AdType_Sp：320x50, kADG_AdType_Large:320x100,
-                  kADG_AdType_Rect:300x250, kADG_AdType_Tablet:728x90,
-                  kADG_AdType_Free:自由設定
-     rootViewController: 広告を配置するViewController
+     * locationID:  管理画面から払い出された広告枠ID
+     * adType:      枠サイズ
+     *            kADG_AdType_Sp：320x50, kADG_AdType_Large:320x100,
+     *            kADG_AdType_Rect:300x250, kADG_AdType_Tablet:728x90,
+     *            kADG_AdType_Free:自由設定
+     * rootViewController: 広告を配置するViewController
      */
     self.adg = [[ADGManagerViewController alloc] initWithLocationID:LOCATION_ID
                                                              adType:kADG_AdType_Sp
                                                  rootViewController:self];
     // test mode 設定
-    //[self.adg setEnableTestMode:YES]
-    // geolocation 設定
-    //[ADGSettings setGeolocationEnabled:YES]
+    // [self.adg setTestModeEnabled:YES]
     // in app browser 設定
-    //[ADGSettings setEnableInAppBrowser:NO];
+    // [ADGSettings setEnableInAppBrowser:NO];
     // child directed であると指定
-    //[ADGSettings setChildDirectedEnabled:YES];
+    // [ADGSettings setChildDirectedEnabled:YES];
     // child directed でないと指定
-    //[ADGSettings setChildDirectedEnabled:NO];
+    // [ADGSettings setChildDirectedEnabled:NO];
     // hyper id 設定
-    //[ADGSettings setHyperIdEnabled:NO];
+    // [ADGSettings setHyperIdEnabled:NO];
     [self.adg addAdContainerView:self.adView]; // 広告Viewを配置するViewを指定
     self.adg.delegate = self;
     [self.adg loadRequest]; // 広告リクエスト
 }
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     [self loadAd];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated {
     self.titleLabel.text = @"Objective-C - 広告枠id: " LOCATION_ID;
     [self reloadATTViews];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // 画面復帰時のローテーション再開
     [self.adg resumeRefresh];
 }
 
-- (NSString *)getInfoText {
+- (NSString *) getInfoText {
     CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
     CTCarrier *provider = [networkInfo subscriberCellularProvider];
+
     return [NSString stringWithFormat:
             @"ADG SDK: v%@\n"
             "isHyperIdEnabled: %@\n"
-            "isGeolocationEnabled: %@\n"
             "enableInAppBrowser: %@\n"
             "device name: %@\n"
             "system name: %@\n"
@@ -99,7 +98,6 @@
             "IDFV: %@"
             , ADG_SDK_VERSION
             , ADGSettings.isHyperIdEnabled ? @"YES" : @"NO"
-            , ADGSettings.isGeolocationEnabled ? @"YES" : @"NO"
             , ADGSettings.enableInAppBrowser ? @"YES" : @"NO"
             , UIDevice.currentDevice.name
             , UIDevice.currentDevice.systemName
@@ -116,7 +114,7 @@
     ];
 }
 
-- (void)reloadATTViews {
+- (void) reloadATTViews {
     self.attStatusLabel.text = @"エラー";
     if (@available(iOS 14, *)) {
         self.attButon.enabled = YES;
@@ -134,32 +132,34 @@
                 self.attStatusLabel.text = @"NotDetermined";
                 break;
         }
-    } else {
+    }
+    else {
         self.attButon.enabled = NO;
         self.attStatusLabel.text = @"OS非対応";
     }
 }
 
-- (IBAction)tappedInfo {
+- (IBAction) tappedInfo {
     UIAlertController *infoDialog = [UIAlertController alertControllerWithTitle:@"Info" message:[self getInfoText] preferredStyle:UIAlertControllerStyleAlert];
-     [infoDialog addAction:[UIAlertAction actionWithTitle:@"閉じる" style:UIAlertActionStyleCancel handler:nil]];
+
+    [infoDialog addAction:[UIAlertAction actionWithTitle:@"閉じる" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:infoDialog animated:YES completion:nil];
 }
 
 
-- (IBAction)tappedATT {
+- (IBAction) tappedATT {
     if (@available(iOS 14, *)) {
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            __weak typeof(self) weakSelf = self;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf reloadATTViews];
-            });
-        }];
+             __weak typeof(self) weakSelf = self;
+             dispatch_async(dispatch_get_main_queue(), ^{
+                                [weakSelf reloadATTViews];
+                            });
+         }];
     }
 }
 
 
-- (IBAction)tappedAdReload {
+- (IBAction) tappedAdReload {
     [self reloadATTViews];
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -167,19 +167,12 @@
     });
 }
 
-
-- (void)dealloc {
-    // インスタンスの破棄
-    self.adg.delegate = nil;
-    self.adg = nil;
-}
-
-- (void)ADGManagerViewControllerReceiveAd:(ADGManagerViewController *)adgManagerViewController {
+- (void) ADGManagerViewControllerReceiveAd:(ADGManagerViewController *)adgManagerViewController {
     NSLog(@"Received an ad.");
 }
 
-- (void)ADGManagerViewControllerFailedToReceiveAd:(ADGManagerViewController *)adgManagerViewController
-                                             code:(kADGErrorCode)code {
+- (void) ADGManagerViewControllerFailedToReceiveAd:(ADGManagerViewController *)adgManagerViewController
+                                              code:(kADGErrorCode)code {
     NSLog(@"Failed to receive an ad.");
     // エラー時のリトライは特段の理由がない限り必ず記述するようにしてください。
     switch (code) {
@@ -193,7 +186,7 @@
     }
 }
 
-- (void)ADGManagerViewControllerDidTapAd:(ADGManagerViewController *)adgManagerViewController{
+- (void) ADGManagerViewControllerDidTapAd:(ADGManagerViewController *)adgManagerViewController {
     NSLog(@"Did tap an ad.");
 }
 

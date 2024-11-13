@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06DC96FF2D5320CE5E94C551 /* Pods_InterstitialAdsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6879068BC993E47C552F67 /* Pods_InterstitialAdsSwift.framework */; };
 		15929F383F31A86485AA5235 /* Pods_BannerAdsObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2F89ED7A8915E77EAA7676 /* Pods_BannerAdsObjC.framework */; };
 		1C765AC3589382BC667F8597 /* Pods_NativeAdsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01316034C3B20C82BD756BE2 /* Pods_NativeAdsSwift.framework */; };
-		33B3A1EDE58EDF834FB7DF9A /* Pods_InterstitialAdsObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BDE91A0A39F62C960E006B /* Pods_InterstitialAdsObjC.framework */; };
+		66C0EA072CE1CB7A00AD2D2D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0EA062CE1CB7600AD2D2D /* LocationManager.swift */; };
 		8E462CF903D9980ADCF569D7 /* Pods_NativeAdsObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9248B643218C98A99BF1CBE /* Pods_NativeAdsObjC.framework */; };
 		B01556CF1F752EC20078E406 /* ADGNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B01556CE1F752EC20078E406 /* ADGNativeAdView.m */; };
 		B01556D11F752ECF0078E406 /* ADGNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01556D01F752ECF0078E406 /* ADGNativeAdView.xib */; };
@@ -26,11 +25,6 @@
 		B02FCC8A1F73C50000D7C310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02FCC891F73C50000D7C310 /* Assets.xcassets */; };
 		B02FCC8D1F73C50000D7C310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02FCC8B1F73C50000D7C310 /* LaunchScreen.storyboard */; };
 		B02FCC901F73C50000D7C310 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B02FCC8F1F73C50000D7C310 /* main.m */; };
-		B02FCCB61F73CBDE00D7C310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FCCB51F73CBDE00D7C310 /* AppDelegate.swift */; };
-		B02FCCB81F73CBDE00D7C310 /* InterstitialAdsSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FCCB71F73CBDE00D7C310 /* InterstitialAdsSwiftViewController.swift */; };
-		B02FCCBB1F73CBDE00D7C310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02FCCB91F73CBDE00D7C310 /* Main.storyboard */; };
-		B02FCCBD1F73CBDE00D7C310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02FCCBC1F73CBDE00D7C310 /* Assets.xcassets */; };
-		B02FCCC01F73CBDE00D7C310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02FCCBE1F73CBDE00D7C310 /* LaunchScreen.storyboard */; };
 		B02FCCCD1F73CBF200D7C310 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B02FCCCC1F73CBF200D7C310 /* AppDelegate.m */; };
 		B02FCCD01F73CBF200D7C310 /* NativeAdsObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02FCCCF1F73CBF200D7C310 /* NativeAdsObjCViewController.m */; };
 		B02FCCD31F73CBF200D7C310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02FCCD11F73CBF200D7C310 /* Main.storyboard */; };
@@ -42,12 +36,6 @@
 		B02FCCEB1F73CC0600D7C310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02FCCE91F73CC0600D7C310 /* Main.storyboard */; };
 		B02FCCED1F73CC0600D7C310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02FCCEC1F73CC0600D7C310 /* Assets.xcassets */; };
 		B02FCCF01F73CC0600D7C310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02FCCEE1F73CC0600D7C310 /* LaunchScreen.storyboard */; };
-		B0EE736C1F74F87B00D9A52E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EE736B1F74F87B00D9A52E /* main.m */; };
-		B0EE736F1F74F87B00D9A52E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EE736E1F74F87B00D9A52E /* AppDelegate.m */; };
-		B0EE73721F74F87B00D9A52E /* InterstitialAdsObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EE73711F74F87B00D9A52E /* InterstitialAdsObjCViewController.m */; };
-		B0EE73751F74F87B00D9A52E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EE73731F74F87B00D9A52E /* Main.storyboard */; };
-		B0EE73771F74F87B00D9A52E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0EE73761F74F87B00D9A52E /* Assets.xcassets */; };
-		B0EE737A1F74F87B00D9A52E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EE73781F74F87B00D9A52E /* LaunchScreen.storyboard */; };
 		DC6D580A034949ADA8A484EB /* Pods_BannerAdsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9329FD9372BA0F16C1A285 /* Pods_BannerAdsSwift.framework */; };
 		E3D571E82B4F802200791950 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D571E62B4F802200791950 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -55,7 +43,6 @@
 /* Begin PBXFileReference section */
 		01316034C3B20C82BD756BE2 /* Pods_NativeAdsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NativeAdsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08760E8D5ED59C27AD44B9D0 /* Pods-NativeAdsObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAdsObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeAdsObjC/Pods-NativeAdsObjC.release.xcconfig"; sourceTree = "<group>"; };
-		087DE63FD7210B81C827CDD1 /* Pods-InterstitialAdsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterstitialAdsSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterstitialAdsSwift/Pods-InterstitialAdsSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		1442E0A8A366F7627656A685 /* Pods-ADGSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADGSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADGSample/Pods-ADGSample.release.xcconfig"; sourceTree = "<group>"; };
 		15EA16852E4445AE75E1D451 /* Pods-NativeAdsObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAdsObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeAdsObjC/Pods-NativeAdsObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		1F9329FD9372BA0F16C1A285 /* Pods_BannerAdsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BannerAdsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,8 +51,7 @@
 		49BE4DF0FD2100395FCAD7CB /* Pods-BannerAdsObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerAdsObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BannerAdsObjC/Pods-BannerAdsObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		528F1FA82186D98B92DB3EF3 /* Pods-BannerAdsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerAdsSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BannerAdsSwift/Pods-BannerAdsSwift.release.xcconfig"; sourceTree = "<group>"; };
 		5D7B36906C824E107A296CD0 /* Pods-ADGSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADGSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADGSample/Pods-ADGSample.debug.xcconfig"; sourceTree = "<group>"; };
-		72BDE91A0A39F62C960E006B /* Pods_InterstitialAdsObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterstitialAdsObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		788A07CA39A466FECE627F0C /* Pods-InterstitialAdsSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterstitialAdsSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterstitialAdsSwift/Pods-InterstitialAdsSwift.release.xcconfig"; sourceTree = "<group>"; };
+		66C0EA062CE1CB7600AD2D2D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B01556CD1F752EC20078E406 /* ADGNativeAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADGNativeAdView.h; sourceTree = "<group>"; };
 		B01556CE1F752EC20078E406 /* ADGNativeAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADGNativeAdView.m; sourceTree = "<group>"; };
 		B01556D01F752ECF0078E406 /* ADGNativeAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADGNativeAdView.xib; sourceTree = "<group>"; };
@@ -87,13 +73,6 @@
 		B02FCC8C1F73C50000D7C310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B02FCC8E1F73C50000D7C310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02FCC8F1F73C50000D7C310 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B02FCCB31F73CBDE00D7C310 /* InterstitialAdsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterstitialAdsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02FCCB51F73CBDE00D7C310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B02FCCB71F73CBDE00D7C310 /* InterstitialAdsSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdsSwiftViewController.swift; sourceTree = "<group>"; };
-		B02FCCBA1F73CBDE00D7C310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B02FCCBC1F73CBDE00D7C310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B02FCCBF1F73CBDE00D7C310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B02FCCC11F73CBDE00D7C310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02FCCC91F73CBF200D7C310 /* NativeAdsObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeAdsObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02FCCCB1F73CBF200D7C310 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B02FCCCC1F73CBF200D7C310 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -112,23 +91,10 @@
 		B02FCCEF1F73CC0600D7C310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B02FCCF11F73CC0600D7C310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0797F243269F1CB77A10059 /* Pods-BannerAdsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerAdsSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BannerAdsSwift/Pods-BannerAdsSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		B0EE73681F74F87B00D9A52E /* InterstitialAdsObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterstitialAdsObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0EE736B1F74F87B00D9A52E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B0EE736D1F74F87B00D9A52E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B0EE736E1F74F87B00D9A52E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B0EE73701F74F87B00D9A52E /* InterstitialAdsObjCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterstitialAdsObjCViewController.h; sourceTree = "<group>"; };
-		B0EE73711F74F87B00D9A52E /* InterstitialAdsObjCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialAdsObjCViewController.m; sourceTree = "<group>"; };
-		B0EE73741F74F87B00D9A52E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B0EE73761F74F87B00D9A52E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B0EE73791F74F87B00D9A52E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B0EE737B1F74F87B00D9A52E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA10F631DC7C183F86700222 /* Pods-NativeAdsSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAdsSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeAdsSwift/Pods-NativeAdsSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		D2520EFDD352131682380FD2 /* Pods-InterstitialAdsObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterstitialAdsObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterstitialAdsObjC/Pods-InterstitialAdsObjC.release.xcconfig"; sourceTree = "<group>"; };
 		D673650960CBE6AF4109A2D5 /* Pods_ADGSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADGSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9248B643218C98A99BF1CBE /* Pods_NativeAdsObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NativeAdsObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD42B776C619F91A0EBD4167 /* Pods-InterstitialAdsObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterstitialAdsObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterstitialAdsObjC/Pods-InterstitialAdsObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		E3D571E72B4F802200791950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EF6879068BC993E47C552F67 /* Pods_InterstitialAdsSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterstitialAdsSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9643B95A87B034C8F5BDB09 /* Pods-BannerAdsObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerAdsObjC.release.xcconfig"; path = "Pods/Target Support Files/Pods-BannerAdsObjC/Pods-BannerAdsObjC.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,14 +115,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B02FCCB01F73CBDE00D7C310 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06DC96FF2D5320CE5E94C551 /* Pods_InterstitialAdsSwift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B02FCCC61F73CBF200D7C310 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,14 +131,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0EE73651F74F87B00D9A52E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				33B3A1EDE58EDF834FB7DF9A /* Pods_InterstitialAdsObjC.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -190,8 +140,6 @@
 				D673650960CBE6AF4109A2D5 /* Pods_ADGSample.framework */,
 				3C2F89ED7A8915E77EAA7676 /* Pods_BannerAdsObjC.framework */,
 				1F9329FD9372BA0F16C1A285 /* Pods_BannerAdsSwift.framework */,
-				72BDE91A0A39F62C960E006B /* Pods_InterstitialAdsObjC.framework */,
-				EF6879068BC993E47C552F67 /* Pods_InterstitialAdsSwift.framework */,
 				D9248B643218C98A99BF1CBE /* Pods_NativeAdsObjC.framework */,
 				01316034C3B20C82BD756BE2 /* Pods_NativeAdsSwift.framework */,
 			);
@@ -222,8 +170,6 @@
 			children = (
 				B02FCC7F1F73C50000D7C310 /* BannerAdsObjC */,
 				B02FCC691F73C4AA00D7C310 /* BannerAdsSwift */,
-				B0EE73691F74F87B00D9A52E /* InterstitialAdsObjC */,
-				B02FCCB41F73CBDE00D7C310 /* InterstitialAdsSwift */,
 				B02FCCCA1F73CBF200D7C310 /* NativeAdsObjC */,
 				B02FCCE41F73CC0600D7C310 /* NativeAdsSwift */,
 				B02FCC281F73C41900D7C310 /* Products */,
@@ -237,10 +183,8 @@
 			children = (
 				B02FCC681F73C4A900D7C310 /* BannerAdsSwift.app */,
 				B02FCC7E1F73C50000D7C310 /* BannerAdsObjC.app */,
-				B02FCCB31F73CBDE00D7C310 /* InterstitialAdsSwift.app */,
 				B02FCCC91F73CBF200D7C310 /* NativeAdsObjC.app */,
 				B02FCCE31F73CC0600D7C310 /* NativeAdsSwift.app */,
-				B0EE73681F74F87B00D9A52E /* InterstitialAdsObjC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,11 +193,12 @@
 			isa = PBXGroup;
 			children = (
 				B02FCC6A1F73C4AA00D7C310 /* AppDelegate.swift */,
-				B02FCC6C1F73C4AA00D7C310 /* BannerAdsSwiftViewController.swift */,
-				B02FCC6E1F73C4AA00D7C310 /* Main.storyboard */,
 				B02FCC711F73C4AA00D7C310 /* Assets.xcassets */,
-				B02FCC731F73C4AA00D7C310 /* LaunchScreen.storyboard */,
+				B02FCC6C1F73C4AA00D7C310 /* BannerAdsSwiftViewController.swift */,
 				B02FCC761F73C4AA00D7C310 /* Info.plist */,
+				B02FCC731F73C4AA00D7C310 /* LaunchScreen.storyboard */,
+				66C0EA062CE1CB7600AD2D2D /* LocationManager.swift */,
+				B02FCC6E1F73C4AA00D7C310 /* Main.storyboard */,
 			);
 			path = BannerAdsSwift;
 			sourceTree = "<group>";
@@ -272,19 +217,6 @@
 				B02FCC8F1F73C50000D7C310 /* main.m */,
 			);
 			path = BannerAdsObjC;
-			sourceTree = "<group>";
-		};
-		B02FCCB41F73CBDE00D7C310 /* InterstitialAdsSwift */ = {
-			isa = PBXGroup;
-			children = (
-				B02FCCB51F73CBDE00D7C310 /* AppDelegate.swift */,
-				B02FCCB71F73CBDE00D7C310 /* InterstitialAdsSwiftViewController.swift */,
-				B02FCCB91F73CBDE00D7C310 /* Main.storyboard */,
-				B02FCCBC1F73CBDE00D7C310 /* Assets.xcassets */,
-				B02FCCBE1F73CBDE00D7C310 /* LaunchScreen.storyboard */,
-				B02FCCC11F73CBDE00D7C310 /* Info.plist */,
-			);
-			path = InterstitialAdsSwift;
 			sourceTree = "<group>";
 		};
 		B02FCCCA1F73CBF200D7C310 /* NativeAdsObjC */ = {
@@ -318,30 +250,6 @@
 			path = NativeAdsSwift;
 			sourceTree = "<group>";
 		};
-		B0EE73691F74F87B00D9A52E /* InterstitialAdsObjC */ = {
-			isa = PBXGroup;
-			children = (
-				B0EE736D1F74F87B00D9A52E /* AppDelegate.h */,
-				B0EE736E1F74F87B00D9A52E /* AppDelegate.m */,
-				B0EE73701F74F87B00D9A52E /* InterstitialAdsObjCViewController.h */,
-				B0EE73711F74F87B00D9A52E /* InterstitialAdsObjCViewController.m */,
-				B0EE73731F74F87B00D9A52E /* Main.storyboard */,
-				B0EE73761F74F87B00D9A52E /* Assets.xcassets */,
-				B0EE73781F74F87B00D9A52E /* LaunchScreen.storyboard */,
-				B0EE737B1F74F87B00D9A52E /* Info.plist */,
-				B0EE736A1F74F87B00D9A52E /* Supporting Files */,
-			);
-			path = InterstitialAdsObjC;
-			sourceTree = "<group>";
-		};
-		B0EE736A1F74F87B00D9A52E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B0EE736B1F74F87B00D9A52E /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D4F3057F70A2B8F55D3DC898 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,10 +259,6 @@
 				F9643B95A87B034C8F5BDB09 /* Pods-BannerAdsObjC.release.xcconfig */,
 				B0797F243269F1CB77A10059 /* Pods-BannerAdsSwift.debug.xcconfig */,
 				528F1FA82186D98B92DB3EF3 /* Pods-BannerAdsSwift.release.xcconfig */,
-				DD42B776C619F91A0EBD4167 /* Pods-InterstitialAdsObjC.debug.xcconfig */,
-				D2520EFDD352131682380FD2 /* Pods-InterstitialAdsObjC.release.xcconfig */,
-				087DE63FD7210B81C827CDD1 /* Pods-InterstitialAdsSwift.debug.xcconfig */,
-				788A07CA39A466FECE627F0C /* Pods-InterstitialAdsSwift.release.xcconfig */,
 				15EA16852E4445AE75E1D451 /* Pods-NativeAdsObjC.debug.xcconfig */,
 				08760E8D5ED59C27AD44B9D0 /* Pods-NativeAdsObjC.release.xcconfig */,
 				CA10F631DC7C183F86700222 /* Pods-NativeAdsSwift.debug.xcconfig */,
@@ -404,25 +308,6 @@
 			productReference = B02FCC7E1F73C50000D7C310 /* BannerAdsObjC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B02FCCB21F73CBDE00D7C310 /* InterstitialAdsSwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B02FCCC21F73CBDE00D7C310 /* Build configuration list for PBXNativeTarget "InterstitialAdsSwift" */;
-			buildPhases = (
-				3479D9EB2AE0D0DC5B41ECDE /* [CP] Check Pods Manifest.lock */,
-				B02FCCAF1F73CBDE00D7C310 /* Sources */,
-				B02FCCB01F73CBDE00D7C310 /* Frameworks */,
-				B02FCCB11F73CBDE00D7C310 /* Resources */,
-				1F12162AE124706FB7384727 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = InterstitialAdsSwift;
-			productName = InterstitialAdsSwift;
-			productReference = B02FCCB31F73CBDE00D7C310 /* InterstitialAdsSwift.app */;
-			productType = "com.apple.product-type.application";
-		};
 		B02FCCC81F73CBF200D7C310 /* NativeAdsObjC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B02FCCDC1F73CBF200D7C310 /* Build configuration list for PBXNativeTarget "NativeAdsObjC" */;
@@ -461,25 +346,6 @@
 			productReference = B02FCCE31F73CC0600D7C310 /* NativeAdsSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B0EE73671F74F87B00D9A52E /* InterstitialAdsObjC */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B0EE737C1F74F87B00D9A52E /* Build configuration list for PBXNativeTarget "InterstitialAdsObjC" */;
-			buildPhases = (
-				AA153D7AB9E6039F7433A61A /* [CP] Check Pods Manifest.lock */,
-				B0EE73641F74F87B00D9A52E /* Sources */,
-				B0EE73651F74F87B00D9A52E /* Frameworks */,
-				B0EE73661F74F87B00D9A52E /* Resources */,
-				0CEE0948AEB8FE922CC0D0E6 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = InterstitialAdsObjC;
-			productName = InterstitialAdsObjC;
-			productReference = B0EE73681F74F87B00D9A52E /* InterstitialAdsObjC.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -498,20 +364,12 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
-					B02FCCB21F73CBDE00D7C310 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
 					B02FCCC81F73CBF200D7C310 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 					B02FCCE21F73CC0600D7C310 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
-					B0EE73671F74F87B00D9A52E = {
-						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -531,8 +389,6 @@
 			targets = (
 				B02FCC7D1F73C50000D7C310 /* BannerAdsObjC */,
 				B02FCC671F73C4A900D7C310 /* BannerAdsSwift */,
-				B0EE73671F74F87B00D9A52E /* InterstitialAdsObjC */,
-				B02FCCB21F73CBDE00D7C310 /* InterstitialAdsSwift */,
 				B02FCCC81F73CBF200D7C310 /* NativeAdsObjC */,
 				B02FCCE21F73CC0600D7C310 /* NativeAdsSwift */,
 			);
@@ -560,16 +416,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B02FCCB11F73CBDE00D7C310 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B02FCCC01F73CBDE00D7C310 /* LaunchScreen.storyboard in Resources */,
-				B02FCCBD1F73CBDE00D7C310 /* Assets.xcassets in Resources */,
-				B02FCCBB1F73CBDE00D7C310 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B02FCCC71F73CBF200D7C310 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -592,16 +438,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0EE73661F74F87B00D9A52E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0EE737A1F74F87B00D9A52E /* LaunchScreen.storyboard in Resources */,
-				B0EE73771F74F87B00D9A52E /* Assets.xcassets in Resources */,
-				B0EE73751F74F87B00D9A52E /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -617,60 +453,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-NativeAdsSwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0CEE0948AEB8FE922CC0D0E6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InterstitialAdsObjC/Pods-InterstitialAdsObjC-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AdGeneration/ADG.framework/ADG",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADG.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InterstitialAdsObjC/Pods-InterstitialAdsObjC-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1F12162AE124706FB7384727 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InterstitialAdsSwift/Pods-InterstitialAdsSwift-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/AdGeneration/ADG.framework/ADG",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADG.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InterstitialAdsSwift/Pods-InterstitialAdsSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3479D9EB2AE0D0DC5B41ECDE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InterstitialAdsSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -729,24 +511,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeAdsObjC/Pods-NativeAdsObjC-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA153D7AB9E6039F7433A61A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InterstitialAdsObjC-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA5AD690B862F22D236C7D6E /* [CP] Check Pods Manifest.lock */ = {
@@ -830,6 +594,7 @@
 			files = (
 				B02FCC6D1F73C4AA00D7C310 /* BannerAdsSwiftViewController.swift in Sources */,
 				B02FCC6B1F73C4AA00D7C310 /* AppDelegate.swift in Sources */,
+				66C0EA072CE1CB7A00AD2D2D /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,15 +605,6 @@
 				B02FCC851F73C50000D7C310 /* BannerAdsObjCViewController.m in Sources */,
 				B02FCC901F73C50000D7C310 /* main.m in Sources */,
 				B02FCC821F73C50000D7C310 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B02FCCAF1F73CBDE00D7C310 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B02FCCB81F73CBDE00D7C310 /* InterstitialAdsSwiftViewController.swift in Sources */,
-				B02FCCB61F73CBDE00D7C310 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,16 +626,6 @@
 				B01556D81F757B0D0078E406 /* ADGNativeAdView.swift in Sources */,
 				B02FCCE81F73CC0600D7C310 /* NativeAdsSwiftViewController.swift in Sources */,
 				B02FCCE61F73CC0600D7C310 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0EE73641F74F87B00D9A52E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0EE73721F74F87B00D9A52E /* InterstitialAdsObjCViewController.m in Sources */,
-				B0EE736F1F74F87B00D9A52E /* AppDelegate.m in Sources */,
-				B0EE736C1F74F87B00D9A52E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,22 +652,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B02FCC8C1F73C50000D7C310 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B02FCCB91F73CBDE00D7C310 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B02FCCBA1F73CBDE00D7C310 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B02FCCBE1F73CBDE00D7C310 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B02FCCBF1F73CBDE00D7C310 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -954,22 +684,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B02FCCEF1F73CC0600D7C310 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B0EE73731F74F87B00D9A52E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0EE73741F74F87B00D9A52E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B0EE73781F74F87B00D9A52E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0EE73791F74F87B00D9A52E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1150,36 +864,6 @@
 			};
 			name = Release;
 		};
-		B02FCCC31F73CBDE00D7C310 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 087DE63FD7210B81C827CDD1 /* Pods-InterstitialAdsSwift.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InterstitialAdsSwift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.supership.InterstitialAdsSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B02FCCC41F73CBDE00D7C310 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 788A07CA39A466FECE627F0C /* Pods-InterstitialAdsSwift.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InterstitialAdsSwift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.supership.InterstitialAdsSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		B02FCCDD1F73CBF200D7C310 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 15EA16852E4445AE75E1D451 /* Pods-NativeAdsObjC.debug.xcconfig */;
@@ -1242,38 +926,6 @@
 			};
 			name = Release;
 		};
-		B0EE737D1F74F87B00D9A52E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD42B776C619F91A0EBD4167 /* Pods-InterstitialAdsObjC.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				INFOPLIST_FILE = InterstitialAdsObjC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.supership.InterstitialAdsObjC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B0EE737E1F74F87B00D9A52E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2520EFDD352131682380FD2 /* Pods-InterstitialAdsObjC.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				INFOPLIST_FILE = InterstitialAdsObjC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.supership.InterstitialAdsObjC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1304,15 +956,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B02FCCC21F73CBDE00D7C310 /* Build configuration list for PBXNativeTarget "InterstitialAdsSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B02FCCC31F73CBDE00D7C310 /* Debug */,
-				B02FCCC41F73CBDE00D7C310 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B02FCCDC1F73CBF200D7C310 /* Build configuration list for PBXNativeTarget "NativeAdsObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1327,15 +970,6 @@
 			buildConfigurations = (
 				B02FCCF31F73CC0600D7C310 /* Debug */,
 				B02FCCF41F73CC0600D7C310 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B0EE737C1F74F87B00D9A52E /* Build configuration list for PBXNativeTarget "InterstitialAdsObjC" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B0EE737D1F74F87B00D9A52E /* Debug */,
-				B0EE737E1F74F87B00D9A52E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
