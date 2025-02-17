@@ -10,12 +10,13 @@ import UIKit
 
 import ADG
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication
+                         .LaunchOptionsKey: Any]?)
         -> Bool
     {
         // Override point for customization after application launch.
@@ -33,9 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        ADGSettings.setChildDirectedEnabled(true)
         // Child Directed でないと指定
 //        ADGSettings.setChildDirectedEnabled(false)
-
-        // Hyper IDモードの設定
-//        ADGSettings.setHyperIdEnabled(false)
 
         // 位置情報の取得開始
         LocationProvider.shared.delegate = self
@@ -79,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: LocationProviderDelegate {
-    func locationProvider(_: LocationProvider, didUpdateLocation location: CLLocation) {
+    nonisolated func locationProvider(_: LocationProvider, didUpdateLocation location: CLLocation) {
         print("Updated location: lat=\(location.coordinate.latitude) lon=\(location.coordinate.longitude)")
 
         ADGSettings.location = ADGLocation(latitude: location.coordinate.latitude,

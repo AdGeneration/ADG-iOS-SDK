@@ -150,6 +150,8 @@ private extension BannerAdsSwiftViewController {
                     newText = "Denied"
                 case .notDetermined:
                     newText = "NotDetermined"
+                @unknown default:
+                    fatalError()
             }
         } else {
             attButton.isEnabled = false
@@ -162,7 +164,6 @@ private extension BannerAdsSwiftViewController {
         let provider = CTTelephonyNetworkInfo().subscriberCellularProvider
         return """
         ADG SDK: v\(ADG_SDK_VERSION)
-        isHyperIdEnabled: \(ADGSettings.isHyperIdEnabled())
         enableInAppBrowser: \(ADGSettings.enableInAppBrowser())
         device name: \(UIDevice.current.name)
         system name: \(UIDevice.current.systemName)

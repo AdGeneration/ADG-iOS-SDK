@@ -48,8 +48,6 @@
     // [ADGSettings setChildDirectedEnabled:YES];
     // child directed でないと指定
     // [ADGSettings setChildDirectedEnabled:NO];
-    // hyper id 設定
-    // [ADGSettings setHyperIdEnabled:NO];
     [self.adg addAdContainerView:self.adView]; // 広告Viewを配置するViewを指定
     self.adg.delegate = self;
     [self.adg loadRequest]; // 広告リクエスト
@@ -82,7 +80,6 @@
 
     return [NSString stringWithFormat:
             @"ADG SDK: v%@\n"
-            "isHyperIdEnabled: %@\n"
             "enableInAppBrowser: %@\n"
             "device name: %@\n"
             "system name: %@\n"
@@ -97,7 +94,6 @@
             "IDFA: %@\n"
             "IDFV: %@"
             , ADG_SDK_VERSION
-            , ADGSettings.isHyperIdEnabled ? @"YES" : @"NO"
             , ADGSettings.enableInAppBrowser ? @"YES" : @"NO"
             , UIDevice.currentDevice.name
             , UIDevice.currentDevice.systemName

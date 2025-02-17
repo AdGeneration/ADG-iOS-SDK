@@ -13,7 +13,7 @@ private let nextLocationUpdateInterval: TimeInterval = 60.0 * 10.0 // 10 minutes
 /// 位置情報取得のサンプルコードです。
 /// このサンプルコードは、10分間隔で位置情報を更新します
 class LocationProvider: NSObject {
-    static let shared = LocationProvider()
+    @MainActor static let shared = LocationProvider()
 
     private let locationManager: CLLocationManager
     private var lastKnownLocation: CLLocation?
@@ -29,12 +29,10 @@ class LocationProvider: NSObject {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
 
         NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground),
-                                               name: Notification.Name
-                                                   .UIApplicationWillEnterForeground,
+                                               name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground),
-                                               name: Notification.Name
-                                                   .UIApplicationDidEnterBackground,
+                                               name: UIApplication.didEnterBackgroundNotification,
                                                object: nil)
     }
 
@@ -109,11 +107,13 @@ extension LocationProvider {
 }
 
 private extension LocationProvider {
-    private func isAuthorized() -> Bool {
+    func isAuthorized() -> Bool {
         let status = CLLocationManager.authorizationStatus()
         return status == .authorizedAlways || status == .authorizedWhenInUse
     }
+}
 
+extension LocationProvider: @unchecked Sendable {
     private func scheduleLocationUpdate() {
         updateTimer?.invalidate()
         updateTimer = Timer.scheduledTimer(withTimeInterval: nextLocationUpdateInterval,
