@@ -308,9 +308,12 @@ static NSString * const ALL_ZERO_UUID = @"00000000-0000-0000-0000-000000000000";
         idfa = @"";
     }
 
+    // iOSバージョンを取得
+    NSString *platformv = [[UIDevice currentDevice] systemVersion];
+
     // js
-    NSString *jsStringTemplate = @"window.adgAdParams = {idfa:'%@', appbundle:'%@'};";
-    NSString *jsString = [NSString stringWithFormat:jsStringTemplate, idfa, bundleId];
+    NSString *jsStringTemplate = @"window.adgAdParams = {idfa:'%@', appbundle:'%@', platformv:'%@'};";
+    NSString *jsString = [NSString stringWithFormat:jsStringTemplate, idfa, bundleId, platformv];
 
     WKUserScript *userScript = [[WKUserScript alloc]
                                  initWithSource:jsString

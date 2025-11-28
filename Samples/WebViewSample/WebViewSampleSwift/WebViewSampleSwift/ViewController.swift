@@ -279,8 +279,12 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
             idfa = ""
         }
 
+        // iOSバージョンを取得
+        let platformv = UIDevice.current.systemVersion
+
         // js
-        let jsString = "window.adgAdParams = {idfa:'\(idfa)', appbundle:'\(bundleId)'};"
+        let jsString =
+            "window.adgAdParams = {idfa:'\(idfa)', appbundle:'\(bundleId)', platformv:'\(platformv)'};"
 
         let userScript = WKUserScript(source: jsString, injectionTime: .atDocumentStart,
                                       forMainFrameOnly: true)
