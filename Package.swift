@@ -19,7 +19,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .binaryTarget(
             name: "ADG",
-            url: "https://github.com/AdGeneration/ADG-iOS-SDK/releases/download/2.34.1/ADG.xcframework.zip",
-            checksum: "89a06fde1ef0fb818777ce49f9b5f2b0223994a609df9871bee1c9365547b686"),
+            url: "https://github.com/AdGeneration/ADG-iOS-SDK/releases/download/2.35.0/ADG.xcframework.zip",
+            checksum: "90663ff2dc3df6308866178071032af905ecaea209021470253a08f021f595de"),
     ]
 )
