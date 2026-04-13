@@ -48,16 +48,13 @@ class ADGNativeAdView: UIView {
         descriptionLabel.text = nativeAd.desc?.value ?? ""
 
         // アイコン画像
-        if let urlStr = nativeAd.iconImage?.url,
-           let url = URL(string: urlStr)
-        {
-            DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url) {
-                    DispatchQueue.main.async { [weak self] in
-                        self?.iconImageView.image = UIImage(data: data)
-                    }
-                }
-            }
+        if nativeAd.canLoadIcon {
+            let mediaView = ADGMediaView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            mediaView.nativeAd = nativeAd
+            mediaView.viewController = viewController
+            mediaView.mediaType = .iconImage
+            iconImageView.addSubview(mediaView)
+            mediaView.load()
         }
 
         // メイン画像・動画

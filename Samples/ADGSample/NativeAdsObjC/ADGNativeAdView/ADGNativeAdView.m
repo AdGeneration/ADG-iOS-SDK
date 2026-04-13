@@ -10,6 +10,8 @@
 #import <ADG/ADGMediaView.h>
 #import <ADG/ADGNativeAd.h>
 
+#import <ADG/ADG.h>
+
 @interface ADGNativeAdView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -58,15 +60,13 @@
     self.descriptionLabel.text = nativeAd.desc ? nativeAd.desc.value : @"";
 
     // アイコン画像
-    if (nativeAd.iconImage.url.length > 0) {
-        NSURL *iconImageUrl = [NSURL URLWithString:nativeAd.iconImage.url];
-        __weak typeof(self) weakSelf = self;
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *iconImageData = [NSData dataWithContentsOfURL:iconImageUrl];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.iconImageView.image = [UIImage imageWithData:iconImageData];
-            });
-        });
+    if (nativeAd.canLoadIcon) {
+        ADGMediaView *mediaView = [[ADGMediaView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        mediaView.nativeAd = nativeAd;
+        mediaView.viewController = viewController;
+        mediaView.mediaType = ADGMediaViewTypeIconImage;
+        [self.iconImageView addSubview:mediaView];
+        [mediaView load];
     }
 
     // メイン画像・動画
