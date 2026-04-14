@@ -20,6 +20,6 @@ let package = Package(
         .binaryTarget(
             name: "ADG",
             url: "https://github.com/AdGeneration/ADG-iOS-SDK/releases/download/2.36.0/ADG.xcframework.zip",
-            checksum: "bdf46ce79ff15dd3679614f96f9a24ef6fb4cea48abc41552968602c0db1db7d"),
+            checksum: "28842d13ce9c657854d1788b7d801744fdee1b3bb8836ac4a9d6bca6d191f132"),
     ]
 )
