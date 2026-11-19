@@ -5,7 +5,6 @@
 //  Copyright © 2017年 Supership Inc. All rights reserved.
 //
 
-import CoreLocation
 import UIKit
 
 import ADG
@@ -34,10 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        ADGSettings.setChildDirectedEnabled(true)
         // Child Directed でないと指定
 //        ADGSettings.setChildDirectedEnabled(false)
-
-        // 位置情報の取得開始
-        LocationProvider.shared.delegate = self
-        LocationProvider.shared.startUpdatingLocation()
 
         return true
     }
@@ -73,14 +68,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also
         // applicationDidEnterBackground:.
-    }
-}
-
-extension AppDelegate: LocationProviderDelegate {
-    nonisolated func locationProvider(_: LocationProvider, didUpdateLocation location: CLLocation) {
-        print("Updated location: lat=\(location.coordinate.latitude) lon=\(location.coordinate.longitude)")
-
-        ADGSettings.location = ADGLocation(latitude: location.coordinate.latitude,
-                                           longitude: location.coordinate.longitude)
     }
 }

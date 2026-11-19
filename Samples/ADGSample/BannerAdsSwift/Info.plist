@@ -22,8 +22,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Test for ADG SDK.</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>テストアプリにてIDFAの取得を許可してください</string>
 	<key>SKAdNetworkItems</key>
